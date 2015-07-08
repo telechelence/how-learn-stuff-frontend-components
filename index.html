@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Alley Learn Stuff: Modular Front End</title>
+
+		<meta name="description" content="">
+		<meta name="author" content="Alley Interactive">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/alley.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section class="center" data-background="images/flatiron.jpg">
+					<section id="title-slide" class="center">
+						<h2>Modular Front End: Angular Directives and Web Components</h2>
+						<p>Drew Machat / @negativev / alleyinteractive.com</p>
+					</section>
+				</section>
+
+				<section class="center">
+          <section class="center">
+            <h2>Web Components</h2>
+            <h2>~=</h2>
+            <ul>
+              <li>select</li>
+              <li>input</li>
+              <li>video</li>
+              <li>etc</li>
+            </ul>
+          </section>
+
+          <section class="center">
+            <h2>The Dream</h2>
+            <p>Webpages made up a bunch of small, semantic, and encapsulated building blocks.</p>
+            <pre><code data-trim class="html">
+<article>
+  <header>
+    <h2>Fancy Post with Slider</h2>
+    <time is="time-ago" datetime="2012-04-01T16:30:00-08:00" format="micro"></time>
+    <author author="author"></author>
+  </header>
+  <carousel images="images"></carousel>
+  <p></p>
+</article>
+            </code></pre>
+          </section>
+          <section class="center">
+            <h2>The Reality</h2>
+            <p>DIV soup</p>
+            <pre><code data-trim class="html">
+<div id="carousel">
+  <div id="items">
+    <div id="overflow">
+      <div class="inner">
+        <img src="image1.png" />
+        <img src="image2.png" />
+        <img src="image3.png" />
+      </div>
+    </div>
+  </div>
+</div>
+            </code></pre>        
+          </section>
+				</section>
+
+        <section class="center">
+          <h2>Node-like</h2>
+          <ul>
+            <li class="fragment">Do one thing</li>
+            <li class="fragment">Large, accessible library</li>
+            <li class="fragment">Composable</li>
+          </ul>
+        </section>
+
+        <section class="center">
+          <section class="center">
+            <h2>What about those "Real" Web Components</h2>
+            <p>Like everything else relating to browser standards, we have no idea when they will become usable (or how they'll look, or how performant they'll be, or...).</p>
+          </section>
+
+          <section class="center">
+            <h2>Polyfills</h2>
+            <h4>implemented against Web Component spec</h4>
+            <ul>
+              <li>Polymer</li>
+              <li>Brick</li>
+              <li>x-tag</li>
+              <li>Bosonic</li>
+            </ul>
+          </section>
+
+          <section class="center">
+            <h2>Componetized Frameworks</h2>
+            <ul>
+              <li>ember</li>
+              <li>React</li>
+              <li>riot</li>
+              <li>Angular</li>
+            </ul>
+          </section>
+
+        </section>
+
+        <section class="center">
+          <h2>Tools to the Rescue (again)</h2>
+          <ul>
+            <li>Webpack/Browserify/ES6</li>
+            <li>CSS-modules</li>
+          </ul>
+        </section>
+
+        <section class="center">
+          <h2>Angular Directives</h2>
+          <ul>
+            <li>Built to sit on top of browser api</li>
+            <li>Isolate Everything* &mdash; Scope ~= Shadow DOM</li>
+            <li>Test Everything</li>
+            <li>Plug it in</li>
+          </ul>
+          <br />
+          <br />
+          <p><i>*except styles, for now</i></p>
+        </section>
+
+        <section class="center">
+          <h2>Simple Example</h2>
+          <a href="https://github.com/dmachat/angular-slideshow-webpack">Slideshow Directive</a>
+        </section>
+
+        <section class="center">
+          <h2>Advanced Example</h2>
+          <a href="https://github.com/alleyinteractive/kff/tree/master/build/apps/datacenter">Data visualization components</a>
+        </section>
+
+        <section class="center">
+          <h2>Angular 2.0</h2>
+          <p>Inching closer to being component-centric. 2.0 is an attempt to trim the API and focus the developer experience, while mapping closely to browser API.</p>
+          <p>1.4.x, 1.5 have a much better component API.</p>
+          <p>2.0 takes advantage of ES6 and element API to do more things natively</p>
+        </section>
+
+        <section class="center">
+          <h2>Questions?</h2>
+        </section>
+
+			</div>
+
+			<img src="images/logo.png" alt="Alley Interactive" id="logo" />
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+				rollingLinks: false,
+				transition: 'default',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
